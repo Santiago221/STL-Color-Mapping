@@ -10,7 +10,7 @@ from matplotlib.colors import Normalize
 # =====================================================
 
 STL_FILE = "file.stl"
-FIELD_FILE = "field_under20MB.txt"
+FIELD_FILE = "field.txt"
 
 OUTPUT_PLY = "modelo_colorido.ply"
 OUTPUT_OBJ = "modelo_colorido.obj"
@@ -102,6 +102,7 @@ mesh.visual.vertex_colors = (rgba*255).astype(np.uint8)
 
 print("Salvando...")
 
+mesh.apply_scale(1000)
 mesh.export(OUTPUT_PLY)
 mesh.export(OUTPUT_OBJ)
 
